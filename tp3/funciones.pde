@@ -28,7 +28,13 @@ void dibujarCirculos(float zonaX, float anchoCelda, float altoCelda, boolean ani
       float posX = zonaX + col * anchoCelda + anchoCelda / 2;
       float posY = fila * altoCelda + altoCelda / 2;
       float x = posX;
-      float y = posY + (animar ? movc : 0);
+      float y;
+      
+     if (animar) {
+      y = posY + movc;
+     } else {
+     y = posY;
+    }
 
       if (col == 0) fill(0);
       else if (col == 1) fill(247, 171, 5);
